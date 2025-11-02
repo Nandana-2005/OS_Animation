@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round Robin Scheduling Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Round Robin CPU Scheduling</h1>
+  </header>
+
+  <main>
+    <section id="controls">
+      <button id="add">Add Process</button>
+      <button id="start">▶ Start</button>
+      <button id="pause">⏸ Pause</button>
+      <button id="clear">🗑 Clear</button>
+      <label>Quantum:
+        <input type="number" id="quantum" value="2" min="1" max="10">
+      </label>
+    </section>
+
+    <section id="dashboard">
+      <div class="metric">CPU Utilization: <span id="cpuUtil">0%</span></div>
+      <div class="metric">Avg Waiting: <span id="avgWait">0</span></div>
+      <div class="metric">Avg Turnaround: <span id="avgTurn">0</span></div>
+      <div class="metric">Throughput: <span id="throughput">0</span></div>
+    </section>
+
+    <section id="process-table">
+      <table id="ptable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Arrival</th>
+            <th>Burst</th>
+            <th>Remaining</th>
+            <th>Completion</th>
+            <th>Turnaround</th>
+            <th>Waiting</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <canvas id="canvas"></canvas>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
